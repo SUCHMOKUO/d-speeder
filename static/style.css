@@ -30,6 +30,11 @@ form {
 input, button {
   border: 0;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button::-moz-focus-inner {
+  border: 0;
 }
 
 .input-container {
