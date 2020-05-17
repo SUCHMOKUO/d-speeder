@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -8,8 +10,21 @@ body {
   height: 100vh;
   background-color: #252525;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 1rem;
+}
+
+form {
+  height: 5rem;
+  margin-bottom: 3rem;
 }
 
 input, button {
@@ -20,7 +35,7 @@ input, button {
 .input-container {
   position: relative;
   width: 30rem;
-  transform: translateY(-2rem);
+  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -45,8 +60,19 @@ input, button {
   position: absolute;
   right: 0.25rem;
   cursor: pointer;
+  transition: all 300ms ease-out;
+}
+
+#download-btn:hover {
+  background-color: #bfcf47;
 }
 
 #download-btn > svg {
   transform: translateY(2px) rotate(180deg);
+}
+
+@media only screen and (max-width: 768px) {
+  .input-container {
+    width: 20rem;
+  }
 }
