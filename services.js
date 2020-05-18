@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const { ProxyHandler, ErrorResponse } = require("./models");
-const { getFileNameFromUrl } = require("./utils");
+const { getFileNameFromUrl, Buffered } = require("./utils");
 
 async function proxy(url) {
   if (!url) {
@@ -18,7 +18,7 @@ async function proxy(url) {
         res.headers.get("content-disposition") ||
         `attachment; filename="${getFileNameFromUrl(url)}"`,
     },
-    res.body
+    res.body.pipe(new Buffered())
   );
 }
 
