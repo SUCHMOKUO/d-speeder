@@ -15,8 +15,11 @@ const staticOpt = static({
 async function errorHandler(ctx, next) {
   try {
     await next();
-  } catch (err) {
-    ctx.throw(err.code || 500, err.message)
+  } catch (error) {
+    ctx.body = {
+      code: error.code || 500,
+      message: error.message
+    }
   }
 }
 
