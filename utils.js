@@ -13,8 +13,8 @@ class Buffered extends Transform {
 
   constructor() {
     super({
-      readableHighWaterMark: 10 * 1024 * 1024,
-      writableHighWaterMark: 10 * 1024 * 1024,
+      readableHighWaterMark: 100 * 1024 * 1024,
+      writableHighWaterMark: 100 * 1024 * 1024,
     });
     this.chunks = null;
   }
@@ -41,7 +41,7 @@ class Buffered extends Transform {
         let buf = Buffer.concat(chunks);
         this.push(buf);
       }
-    }, 100);
+    }, 1000);
     callback();
   }
 
