@@ -1,9 +1,9 @@
 {
-  "name": "downloader",
+  "name": "d-speeder",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple http download proxy.",
   "engines": {
-    "node": "12.16.3"
+    "node": "14.x"
   },
   "main": "app.js",
   "scripts": {

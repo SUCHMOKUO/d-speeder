@@ -1,10 +1,13 @@
 # d-speeder
-一个HTTP下载中继，用于加速外网资源下载
 
-运行：
+一个简单的 HTTP 下载中继，可用于加速外网资源下载
+
+![](doc/img/banner.png)
+
+## Development
 ```
 npm install
 npm start
 ```
 
-[online demo](https://d-speeder.herokuapp.com)
+[Online Demo](https://d-speeder.herokuapp.com)
