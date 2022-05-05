@@ -1,12 +1,12 @@
-import Router from "@koa/router"
-import { proxy } from "./service.mjs"
+import Router from '@koa/router'
+import { proxy } from './service.mjs'
 
-const router = new Router();
+const router = new Router()
 
-router.get("/proxy", async (ctx) => {
-  const proxyHandler = await proxy(ctx.query.url);
-  ctx.set(proxyHandler.headers);
-  ctx.body = proxyHandler.bodyStream;
-});
+router.get('/proxy', async (ctx) => {
+  const proxyHandler = await proxy(ctx.query.url)
+  ctx.set(proxyHandler.headers)
+  ctx.body = proxyHandler.bodyStream
+})
 
-export default router;
+export default router

@@ -5,6 +5,7 @@
 ![](doc/img/banner.png)
 
 ## Development
+
 ```
 npm install
 npm start

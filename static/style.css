@@ -27,7 +27,8 @@ form {
   margin-bottom: 3rem;
 }
 
-input, button {
+input,
+button {
   border: 0;
   outline: none;
   -webkit-tap-highlight-color: transparent;
