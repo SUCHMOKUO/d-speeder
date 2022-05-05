@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple http download proxy.",
   "engines": {
-    "node": "18.x"
+    "node": "17.x"
   },
   "main": "src/app.mjs",
   "scripts": {
