@@ -1,12 +1,13 @@
-const fetch = require("node-fetch");
-const { ProxyHandler, ErrorResponse } = require("./models");
-const { getFileNameFromUrl, Buffered } = require("./utils");
+import fetch from "node-fetch"
+import { ProxyHandler, ErrorResponse } from "./model.mjs"
+import { getFileNameFromUrl, Buffered } from "./utils.mjs"
 
-async function proxy(url) {
+export async function proxy(url) {
   if (!url) {
     throw new ErrorResponse(400, "illegal url");
   }
   const res = await fetch(url);
+
   if (!res.ok) {
     throw new ErrorResponse(res.status, `Remote error: ${res.statusText}`);
   }
@@ -21,5 +22,3 @@ async function proxy(url) {
     res.body.pipe(new Buffered())
   );
 }
-
-module.exports.proxy = proxy;

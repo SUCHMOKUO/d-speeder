@@ -1,14 +1,15 @@
-const path = require("path");
-const { Transform } = require("stream");
+import path from "node:path"
+import { Transform } from "node:stream"
+import { fileURLToPath } from "node:url";
 
-function getFileNameFromUrl(url) {
+export function getFileNameFromUrl(url) {
   if (!url) {
     return "";
   }
   return path.basename(url);
 }
 
-class Buffered extends Transform {
+export class Buffered extends Transform {
   static MIN_SIZE = 8 * 1024;
 
   constructor() {
@@ -57,5 +58,6 @@ class Buffered extends Transform {
   }
 }
 
-module.exports.getFileNameFromUrl = getFileNameFromUrl;
-module.exports.Buffered = Buffered;
+export function getDirname() {
+  return path.dirname(fileURLToPath(import.meta.url));
+}
