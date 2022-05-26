@@ -7,8 +7,8 @@
 ## Development
 
 ```
-npm install
-npm start
+yarn
+yarn dev
 ```
 
 [Online Demo](https://d-speeder.herokuapp.com)
